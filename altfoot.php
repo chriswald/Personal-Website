@@ -1,0 +1,2 @@
+<em>not displaying correctly? try <a href="https://www.google.com/chrome" target="_blank">Google Chrome</a>.</em>
+<?php if ($res)     echo "<span style=\"float:right;\"><em>be sure to view the page source</em></span>"; ?>

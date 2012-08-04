@@ -1,0 +1,13 @@
+<!DOCTYPE dlg>
+
+<dialogue>
+	<title>Hey</title>
+	<menu>
+		<opt><title>Introduction</title>
+			<content>Nice to meet you, my name is Jenna. I've lived here for years. It really is beautiful, isn't it?</content>
+		</opt>
+		<opt><title>What do you know about this place?</title>
+			<content>This is a highly customizable area where you can mold the world to fit your needs.</content>
+		</opt>
+	</menu>
+</dialogue>

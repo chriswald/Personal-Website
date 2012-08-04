@@ -1,0 +1,31 @@
+<!DOCTYPE dlg>
+
+<head>
+	<title>Hello!</title>
+	<menu>
+		<opt><title>Talk</title>
+			<menu>
+				<opt><title>Introduction</title>
+					<content>Well met Wanderer. My name is Harry. I used to be an adventurer like you before I developed weak wrists.</content>
+				</opt>
+				<opt><title>About this place</title>
+					<content>I'm told this is a free-form world where you can test your skills. There exist only a few enemies for you to practice on and a few characters for you to interact with. Whatever that means...</content>
+				</opt>
+				<opt><title>Tell me about yourself</title>
+					<content>My wife, Jenna, is over there. We live a simple life here in lvl1. Sure there's nothing fancy, but we get by on just what we need. We never get visitors, though, so having one drop by like this is rather unexpected.</content>
+				</opt>
+			</menu>
+		</opt>
+		<opt><title>Do Something</title>
+			<menu>
+				<opt><title>Jump</title>
+					<content>How high?</content>
+					<action>dojump</action>
+				</opt>
+				<opt><title>Turn and run</title>
+					<action>turn</action>
+				<opt>
+			</menu>
+		</opt>
+	</menu>
+</head>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style/tools.css" type="text/css">
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33980453-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <script>
+      var title1, title2, nx=0, rotXINT, direction=1;
+      function rotate()
+      {
+        direction=1;
+        title1 = document.getElementById("title1");
+        title2 = document.getElementById("title2");
+        clearInterval(rotXINT);
+        rotXINT=setInterval("startXRotate()", 10)
+      }
+      function rotateback()
+      {
+        direction=-1;
+        title1 = document.getElementById("title1");
+        title2 = document.getElementById("title2");
+        clearInterval(rotXINT);
+        rotXINT=setInterval("startXRotate()", 10)
+      }
+      function startXRotate()
+      {
+        nx=nx+direction;
+        title1.style.webkitTransform="rotateX("+nx+"deg)";
+        title2.style.webkitTransform="rotateX("+(nx-90)+"deg)";
+        if (nx==0 || nx==90 || nx==180 || nx==270 || nx>=360)
+        {
+          clearInterval(rotXINT);
+          if (nx>=360) {nx=0}
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="wrapper">
+	<a class="name" href="index.html">Chris Wald</a>
+	<ul class="menu">
+	  <li onclick="location.href='tools.html'">Tools</li>
+	  <li onclick="location.href='http://github.com/chriswald/FaceBash'">F.aceBash</li>
+          <li onclick="location.href='http://github.com/chriswald'">GitHub</li>
+          <li onclick="location.href='http://www.linkedin.com/in/christopherwald'">LinkedIn</li>
+          <li onclick="location.href='https://plus.google.com/u/0/107886694425709998733/about'">Google+</li>
+          <li onclick="location.href='mailto:wald.j.chris@gmail.com'">Contact</li>
+	</ul>
+      </div>
+    </header>
+
+    <div class="body">
+      <div style="height:15px;"></div>
+      <h1 id="title1" onclick="rotate()" style="margin-left:300px;">&lt;!--Color</h1>
+      <h1 id="title2" onclick="rotateback()" style="margin-left:400px; -webkit-transform: rotateX(-90deg);">Picker--&gt;</h1>
+    </div>
+  </body>
+</html>
+

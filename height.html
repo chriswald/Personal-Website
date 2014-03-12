@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			var width = $("body").width();
+			var height = 0;
+			while ($("body").width() == width) {
+				height ++;
+				$("body").height(height + "px");
+			}
+			var scrollwidth = width - $("body").width();
+			height --;
+			$("body").height(height + "px");
+			console.log("Scrollbar Width: " + scrollwidth);
+			console.log("Page Height: " + height);
+			$("#content").html("Scrollbar Width: " + scrollwidth + "<br/>" +
+								"Page Height: " + height);
+		});
+		</script>
+	</head>
+	<body sytle="width: 100%; margin: 1px; padding: 0px;">
+		<div id="content">
+			
+		</div>
+	</body>
+</html>

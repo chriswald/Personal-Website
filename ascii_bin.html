@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ASCII/Binary converter</title>
+    <link rel="stylesheet" href="style/tools.css" type="text/css">
+    <script>
+      function atb() {
+        var val = document.getElementById("ascii").value;
+        document.getElementById("binary").value = StringToBin(val);
+      }
+
+      function bta() {
+        var val = document.getElementById("binary").value;
+        document.getElementById("ascii").value = BinToString(val);
+      }
+
+      function StringToBin(text) {
+        var output = "";
+        for (var i = 0; i < text.length; i ++) {
+          var num = text.charCodeAt(i);
+          var byte = "";
+          for (var j = 7; j >= 0; j --) {
+            if (num >= Math.pow(2,j)) {
+              byte += "1";
+              num -= Math.pow(2,j);
+            } else {
+              byte += "0";
+            }
+          }
+          output += byte;
+        }
+        return output;
+      }
+
+      function BinToString(val) {
+	var output = "";
+	for (var i = 0; i < val.length; ) {
+          var num = 0;
+          for (var j = 7; j >= 0; j --) {
+            if (val[i] == "1") {
+              num += Math.pow(2,j);
+            }
+            i ++;
+          }
+          output += String.fromCharCode(num);
+        }
+        return output;
+      }
+    </script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-33980453-1']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="wrapper">
+        <a class="name" href="index.html">Chris Wald</a>
+        <ul class="menu">
+          <li onclick="location.href='tools.html'">Tools</li>
+          <li onclick="location.href='http://westerntime.chriswald.com'">Western Time</li>
+          <li onclick="location.href='http://github.com/chriswald'">GitHub</li>
+          <li onclick="location.href='http://www.linkedin.com/in/christopherwald'">LinkedIn</li>
+          <li onclick="location.href='https://plus.google.com/u/0/107886694425709998733/about'">Google+</li>
+          <li onclick="location.href='mailto:wald.j.chris@gmail.com'">Contact</li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="body">
+      <div style="height:15px;"></div>
+      <h1 style="margin-left:250px;">&lt;!--ASCII/Binary</h1>
+      <h1 style="margin-left:450px;">Converter--&gt;</h1>
+      <table>
+        <tr>
+          <td><textarea rows="8" cols="50" id="ascii"></textarea></td>
+          <td><textarea rows="8" cols="50" id="binary"></textarea></td>
+        </tr>
+        <tr>
+          <td><button type="button" onclick="atb()" style="width:100%;"><div style="margin:5px auto 5px auto;">Convert to Binary</div></button></td>
+          <td><button type="button" onclick="bta()" style="width:100%;"><div style="margin:5px auto 5px auto;">Convert to ASCII</div></button></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

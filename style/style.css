@@ -52,7 +52,6 @@ table {
 
 body {
    background-color: whiteSmoke;
-   background-image: url("bg.jpg");
    background-repeat: repeat-y;
    background-position: left top;
    background-size: 100%;
@@ -213,9 +212,9 @@ h2 {
     background-color: white;
     width: 720px;
     
-    -webkit-box-shadow: 0px 0px 2px 2px rgba(75, 75, 75, 0.2);
-    -moz-box-shadow: 0px 0px 2px 2px rgba(75, 75, 75, 0.2);
-    box-shadow: -2px 0px 2px 0px rgba(75, 75, 75, 0.2);
+    -webkit-box-shadow: 0px 2px 5px 3px rgba(75, 75, 75, 0.2);
+    -moz-box-shadow: 0px 2px 5px 3px rgba(75, 75, 75, 0.2);
+    box-shadow: 0px 2px 5px 3px rgba(75, 75, 75, 0.2);
 }
 
 .body .col2 h2 {
@@ -242,7 +241,7 @@ h2 {
 .footer {
     background: whiteSmoke;
     text-align: center;
-    padding-top: 20px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -265,6 +264,7 @@ h2 {
 @media print {
     .name {
         color: black;
+        text-shadow: none;
     }
 
     .menu {
@@ -275,11 +275,21 @@ h2 {
         display: none;
     }
 
+    .col2 {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+
     h2 h2:hover {
-        border: 0px solid white;
+        border: none;
     }
 
     #date {
         display: none;
+    }
+
+    .header {
+        background-color: none;
     }
 }

@@ -12,6 +12,7 @@ function BF_Interpreter(code, opts) {
 	resetScripter();
 	BF_Scripter(code, opts);
 	Scripter = state;
+	delete state;
 }
 
 resetScripter();
@@ -20,12 +21,15 @@ function BF_Scripter(code, opts) {
 	Scripter.stdout = "";
 	opts = opts || {};
 	opts.quiet = opts.quiet || false;
+	opts.memory = opts.memory || 30000;
+	Scripter.stdin += (opts.stdin || "");
+
 	if (!Scripter.initialized) {
-		for (var j = 0; j < (opts.memory || 30000); j ++)
-			Scripter.memory.push(0);
+		Scripter.memory.length = opts.memory;
+		for (var i = 0; i < opts.memory; i ++)
+			Scripter.memory[i] = 0;
 		Scripter.initialized = true;
 	}
-	Scripter.stdin += (opts.stdin || "");
 
 	if (Scripter.loop_start_indices.length > 0) {
 		var closed = 0;
@@ -57,19 +61,24 @@ function BF_Scripter(code, opts) {
 			Scripter.memory[Scripter.mem_ptr]--;
 		else if (tok === ".")
 			Scripter.stdout += String.fromCharCode(Scripter.memory[Scripter.mem_ptr]);
-		else if (tok === ",")
-			Scripter.memory[Scripter.mem_ptr] = Scripter.stdin.charCodeAt(Scripter.stdin_ptr++) || 0;
+		else if (tok === ",") {
+			Scripter.memory[Scripter.mem_ptr] = Scripter.stdin.charCodeAt(Scripter.stdin_ptr) || 0;
+			if (Scripter.stdin_ptr < Scripter.stdin.length) {
+				Scripter.stdin_ptr ++;
+			}
+			
+		}
 		else if (tok === "[") {
 			Scripter.loop_start_indices.push(i);
 			var depth = 1;
-			var k;
-			for (var k = i+1; k < code.length && depth !== 0; k ++) {
-				if (code[k] === "[") {
+			for (var j = i+1; j < code.length && depth !== 0; j ++) {
+				if (code[j] === "[") {
 					depth ++;
 					Scripter.loop_start_indices.push(k);
 				}
-				if (code[k] === "]")
+				if (code[j] === "]") {
 					depth --;
+				}
 			}
 			if (depth !== 0) {
 				Scripter.loop = code.substring(i);

@@ -25,7 +25,7 @@ $TITLE = "Chris Wald";
 	<a href="resume.html">R&eacute;sum&eacute;</a>
     </span></div>
     <div><span class="block mid menu">
-	<a href="https://github.com/chriswald">GitHub</a>
+	<a href="https://gitlab.chriswald.com/chriswald">GitLab</a>
     </span></div>
     <div><span class="block bot menu">
 	<a href="mailto:wald.j.chris@gmail.com">Contact</a>

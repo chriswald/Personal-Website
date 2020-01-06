@@ -27,7 +27,7 @@
 				<li onclick="location.href='resume.html'">R&eacute;sum&eacute;</li>
 				<li onclick="location.href='tools.html'">Tools</li>
 				<li onclick="location.href='http://westerntime.chriswald.com'">Western Time</li>
-				<li onclick="location.href='https://gitlab.chriswald.com/chriswald'">GitLab</li>
+				<li onclick="location.href='https://gogs.chriswald.com/chriswald'">Projects</li>
 				<li onclick="location.href='http://www.linkedin.com/in/christopherwald'">LinkedIn</li>
 				<li onclick="location.href='mailto:wald.j.chris@gmail.com'">Contact</li>
 			</ul>

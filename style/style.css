@@ -124,12 +124,12 @@ h2 {
 
 .wrapper {
     color: white;
-    width: 1080px; /*1100px;*/
+    width: 1080px;
     margin: 0px auto;
 }
 
 .name {
-    font-size: 30px;
+    font-size: 2em;
     text-shadow: -1px -1px 1px #c0c0c8;
     text-align: right;
     width: 240px;
@@ -143,27 +143,29 @@ h2 {
     }
 }
 
-.header .wrapper .menu {
-    float: left;
-    border-left: 1px solid white;
-    padding-left: 10px;
-}
-
-.header .wrapper .menu li {
-    float: left;
+.menulink
+{
+	color: white;
+	text-decoration: none;
+	
+	display: inline-block;
+	vertical-align: middle;
+	
     padding-left: 10px;
     padding-right: 10px;
-    cursor: pointer;
     border-top: 3px solid #3bb0ff;
-    line-height: 37px;
+    border-bottom: 3px solid #3bb0ff;
+    line-height: 2em;
+	margin-top: -3px;
     
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
 }
 
-.header .wrapper .menu li:hover {
+.menulink:hover {
     border-top: 3px solid white;
+    border-bottom: 3px solid white;
 }
 
 .body {

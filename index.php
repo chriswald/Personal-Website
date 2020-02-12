@@ -1,18 +1,5 @@
-<?php
-	include_once("detectmobilebrowser.php");
-	$detect = new Mobile_Detect;
-	if ($detect->isMobile())
-	{
-		$location = "mobile.php";
-		if ($_GET["f"])
-		{
-			$location .= $_GET["f"];
-		}
-		header("Location: " . $location);
-	}
-?>
-
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<title>Chris Wald</title>
@@ -20,17 +7,20 @@
 	</head>
 
 	<body>
-		<div class="topname">Chris</div>
-		<div class="bottomname">Wald</div>
-		<div class="content">
-			<ul class="menu">
-				<li onclick="location.href='resume.html'">R&eacute;sum&eacute;</li>
-				<li onclick="location.href='tools.html'">Tools</li>
-				<li onclick="location.href='http://westerntime.chriswald.com'">Western Time</li>
-				<li onclick="location.href='https://gogs.chriswald.com/chriswald'">Projects</li>
-				<li onclick="location.href='http://www.linkedin.com/in/christopherwald'">LinkedIn</li>
-				<li onclick="location.href='mailto:wald.j.chris@gmail.com'">Contact</li>
-			</ul>
-		</div>
+		<table class="landingcontent">
+			<tr class="headerrow"><td>
+				<div class="topname">Chris</div>
+			</td></tr>
+			<tr class="contentrow"><td>
+				<div class="content">
+					<a href="resume.html"><div class="menulink">R&eacute;sum&eacute;</div></a>
+					<a href="https://gogs.chriswald.com/chriswald"><div class="menulink">Projects</div></a>
+					<a href="https://www.strava.com/athletes/chriswald"><div class="menulink">Cycling</div></a>
+				</div>
+			</td></tr>
+			<tr class="headerrow"><td>
+				<div class="bottomname">Wald</div>
+			</td></tr>
+		</table>
 	</body>
 </html>

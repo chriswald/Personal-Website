@@ -14,7 +14,7 @@
 			<tr class="contentrow"><td>
 				<div class="content">
 					<a href="resume.html"><div class="menulink">R&eacute;sum&eacute;</div></a>
-					<a href="https://gogs.chriswald.com/chriswald"><div class="menulink">Projects</div></a>
+					<a href="https://github.com/chriswald"><div class="menulink">Projects</div></a>
 					<a href="https://www.strava.com/athletes/chriswald"><div class="menulink">Cycling</div></a>
 				</div>
 			</td></tr>

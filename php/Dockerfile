@@ -1,2 +1,2 @@
 FROM php:fpm-alpine
-COPY ../content/ /var/www/html/
+COPY ./content/ /var/www/html/
